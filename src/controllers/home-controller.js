@@ -1,6 +1,15 @@
 const Item = require('../models/Item');
+const axios = require('axios');
 
-module.exports = {  
+module.exports = {
+    valuta: (req, res) => {
+        axios.get("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json")
+            .then(value => {
+                res.send(`Курс валюты: ${value.data[26].rate}`);
+            })
+            .catch(console.log);
+    },
+
     welcome: (req, res) => { 
         Item.find({}).then(foundItems => {
             console.log(foundItems);
