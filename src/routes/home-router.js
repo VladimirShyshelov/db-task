@@ -6,6 +6,7 @@ homeRouter.get('/', homeContorller.welcome);
 homeRouter.get('/add', homeContorller.add);
 homeRouter.get('/update', homeContorller.update);
 homeRouter.get('/delete', homeContorller.delete);
+homeRouter.get('/valuta', homeContorller.valuta);
 
 homeRouter.post('/add', homeContorller.addPost);
 homeRouter.post('/update', homeContorller.updatePost);
